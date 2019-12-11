@@ -17,5 +17,9 @@ class UrlMappings {
         "/Registros_de_Clientes"(controller: "clientes"){
             action=[GET:"Clientes"]
         }
+
+        "/Registros_de_Clientes/salvar"(controller: "clientes"){
+            action=[POST:"salvar"]
+        }
     }
 }

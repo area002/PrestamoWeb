@@ -7,4 +7,8 @@ class ClientesController {
     def Clientes(){
         render view: "/home_page/reg_clientes";
     }
+    def salvar(){
+
+
+    }
 }
