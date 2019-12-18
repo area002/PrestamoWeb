@@ -17,20 +17,26 @@ class Cliente {
     }
     String nombreCli
     String apellido
-    Long cedCli
+    String cedCli
     String dirCli
-    Long celCli
-    Long telefono
+    String celCli
+    String telefono
     Boolean visible
+    String agente
+    String cobrador
+    String zona
 
     static constraints = {
         nombreCli(size: 0..30)
         apellido(size: 1..35, blank: false)
-        cedCli(nullable: true, max: 9999999999L)
+        cedCli(nullable: true)
         dirCli(size: 0..50)
-        celCli(nullable: true, max: 9999999999L)
-        telefono(nullable: true, max: 9999999999L)
+        celCli(nullable: true)
+        telefono(nullable: true)
         visible(nullable: true)
+        agente()
+        cobrador()
+        zona()
     }
 
 }

@@ -11,7 +11,7 @@
 
 <body>
 
-<form id="reg_cli">
+<form id="reg_cli" method="post">
 
     <div class="row">
 
@@ -33,6 +33,38 @@
                 <input type="text" class="form-control" id="idapellido" name="idapellido" >
                 %{--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}%
             </div>
+
+            <div class="row">
+
+                <p>Agente:</p> &nbsp; &nbsp;
+                <div>
+                <select class="form-control" id="agente" name="agente">
+                    <option value="0">Seleccionar</option>
+                    <g:each in="${combos.agentes}">
+                        <option value="${it.id}">${it.nombre}</option>
+
+                    </g:each>
+                </select>
+                </div>
+                &nbsp; &nbsp;
+
+                <p>Cobrador:</p> &nbsp; &nbsp;
+                <div >
+                    <select class="form-control" id="cobrador" name="cobrador">
+                        <option value="0">Seleccionar</option>
+                        <g:each in="${combos.cobradores}">
+                            <option value="${it.id}">${it.nombre}</option>
+
+                        </g:each>
+
+                    </select>
+                </div>
+
+
+            </div>
+
+
+
 
         </div>
 
@@ -56,7 +88,23 @@
                 %{--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}%
             </div>
 
+            <div class="row">
+                &nbsp; &nbsp;
+                <p>Zona:</p> &nbsp; &nbsp;
+                <div>
+                    <select class="form-control" id="zona" name="zona" >
+                        <option value="0">Seleccionar</option>
+                        <g:each in="${combos.zonas}">
+                            <option value="${it.id}">${it.nombre}</option>
+
+                        </g:each>
+
+                    </select>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
 
@@ -69,7 +117,65 @@
 
 
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3>Listado de Clientes</h3>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Cédula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Agente</th>
+        <th scope="col">Cobrador</th>
+        <th scope="col">Zona</th>
+        <th scope="col">Acción</th>
+    </tr>
+    </thead>
+    <tbody id="contenedorTabla">
+
+    <g:each in="${clienteList}">
+
+        <tr>
+            <th scope="row">${it.cedCli}</th>
+            <td>${it.nombreCli}</td>
+            <td>${it.celCli}</td>
+            <td>${it.dirCli}</td>
+            <td>${it.nagente}</td>
+            <td>${it.ncobrador}</td>
+            <td>${it.nzona}</td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Acción
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a onclick="editar('${it.id}')" class="dropdown-item" style="cursor: pointer;"><span
+                                class=" fa fa-pencil"></span> Editar</a>
+                        <a  onclick="confirmarEliminar('${it.id}')"  class="dropdown-item" style="cursor: pointer;">
+                            <span class="fa fa-trash"></span> Eliminar</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </g:each>
+
+    </tbody>
+</table>
+
+<br><br><br><br><br><br><br>
 
 
+
+<asset:javascript src="reg_cli.js"/>
 </body>
+
 </html>

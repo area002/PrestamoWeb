@@ -21,5 +21,23 @@ class UrlMappings {
         "/Registros_de_Clientes/salvar"(controller: "clientes"){
             action=[POST:"salvar"]
         }
+
+        "/Registros_de_Clientes/buscarclientebyid"(controller: "clientes"){
+            action=[POST:"buscarclientebyid"]
+        }
+
+        "/Registros_de_Clientes/eliminar"(controller: "clientes"){
+            action=[POST:"eliminar"]
+        }
+
+        "/Registros_de_Clientes/actualizarTala"(controller: "clientes"){
+            action=[POST:"actualizarTala"]
+        }
+
+        //PRESTAMOS
+
+        "/Registro_de_Prestamos"(controller: "registroPrestamos"){
+            action=[GET:"Registro_de_Prestamos"]
+        }
     }
 }

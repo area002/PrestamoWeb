@@ -1,19 +1,19 @@
-const ONLY_NUMBERS_MESSAGE = "Only numbers in this field.";
-const FIELD_REQUIRED_MESSAGE = "This field is required.";
-//const FIELD_TO_LONG_MESSAGE = "";
-const INVALID_FORMAT_MESSAGE = "Invalid Format.";
-const NO_SELECTED_MESSAGE = "Select an option.";
-const INVALID_DATE_RANGE_MESSAGE = "Invalid date range.";
-
-const SUCESS_SAVED_MESSAGE = "Information saved successfully";
-const ERROR_SAVED_MESSAGE = "Information could not be saved successfully";
+// const ONLY_NUMBERS_MESSAGE = "Only numbers in this field.";
+// const FIELD_REQUIRED_MESSAGE = "This field is required.";
+// //const FIELD_TO_LONG_MESSAGE = "";
+// const INVALID_FORMAT_MESSAGE = "Invalid Format.";
+// const NO_SELECTED_MESSAGE = "Select an option.";
+// const INVALID_DATE_RANGE_MESSAGE = "Invalid date range.";
+//
+// const SUCESS_SAVED_MESSAGE = "Information saved successfully";
+// const ERROR_SAVED_MESSAGE = "Information could not be saved successfully";
 
 
 //Expresiones regulaes utiles
-
-const VALIDATED_ZIP = /^\d{5}$|^\d{5}-\d{4}$/;
-
-const VALIDATED_DECIMAL_NUMBERs = /^[0-9]+(\.[0-9]+)?$/;
+//
+// const VALIDATED_ZIP = /^\d{5}$|^\d{5}-\d{4}$/;
+//
+// const VALIDATED_DECIMAL_NUMBERs = /^[0-9]+(\.[0-9]+)?$/;
 
 function formToJson(form) {
     let inputs = $(form).find('input, select, textarea');

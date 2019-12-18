@@ -26,6 +26,10 @@ repositories {
 }
 
 dependencies {
+    compile 'org.grails.plugins:postgresql-extensions:6.0.0'
+//    provided 'org.postgresql:postgresql:9.4.1211.jre7'
+    runtime 'org.postgresql:postgresql:9.4-1204-jdbc41'
+
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
