@@ -15,7 +15,7 @@ $("#reg_cli").submit(function (e) {
 
 
 
-
+// se encarga de que los formularios no queden vacios y return true o false
 function validar(params) {
 
     if (params.idnombre == ""){
@@ -62,6 +62,7 @@ function salvar(params) {
                 show_yes("Relizado",json.msj);
                 idclientemod = 0;
                 // ActualizarTabla();
+                $("#reg_cli").trigger('reset');
             }
             else{
                 show_no("Error",json.msj);
@@ -89,6 +90,9 @@ function editar(idcliente) {
             $("#iddireccion").val(json.dirCli);
             $("#idcelular").val(json.celCli);
             $("#idtelefono").val(json.telefono);
+            $("#agente").val(json.agente);
+            $("#cobrador").val(json.cobrador);
+            $("#zona").val(json.zona);
         }
     });
 }

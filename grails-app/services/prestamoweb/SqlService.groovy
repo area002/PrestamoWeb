@@ -4,6 +4,9 @@ import grails.gorm.transactions.Transactional
 import grails.util.Holders
 import org.springframework.jdbc.core.JdbcTemplate
 
+import java.sql.Timestamp
+import java.text.SimpleDateFormat
+
 @Transactional
 class SqlService {
 
@@ -77,6 +80,15 @@ class SqlService {
             System.err.println(e.getMessage());
             return Collections.EMPTY_LIST;
         }
+    }
+
+    def  Timestamp Get_Sumar_Dias(Date fecha_inicial, Long dias)
+    {
+        def template = new JdbcTemplate(dataSource);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        String f1=simpleDateFormat.format(fecha_inicial);
+        Timestamp a=template.queryForObject("SELECT ('$f1'::date +'$dias days'::INTERVAL )::TIMESTAMP",Timestamp.class);
+        return a;
     }
 
     def serviceMethod() {

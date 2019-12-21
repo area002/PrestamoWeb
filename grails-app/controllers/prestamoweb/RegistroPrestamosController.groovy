@@ -10,4 +10,8 @@ class RegistroPrestamosController {
         Map mapa = prestamosService.GetCombos();
         render view: "/home_page/reg_prestamos", model: [combos:mapa]
     }
+
+    def GenerarTabla(){
+
+    }
 }

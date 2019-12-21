@@ -77,7 +77,9 @@ class ClientesService {
                 "cliente AS c\n" +
                 "INNER JOIN agente AS a ON c.agente::INTEGER = a.idagente\n" +
                 "INNER JOIN t_zona AS z ON c.zona::INTEGER = Z.idzona\n" +
-                "INNER JOIN cobradores AS co ON c.cobrador::INTEGER = co.idcobrador";
+                "INNER JOIN cobradores AS co ON c.cobrador::INTEGER = co.idcobrador\n" +
+                "WHERE c.visible=TRUE";
+
 
         return  sqlService.GetQuery(sql);
 
