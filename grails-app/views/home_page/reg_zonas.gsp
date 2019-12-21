@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<form id="reg_cob" method="post">
+<form id="reg_zon" method="post">
 
     <div class="row">
 

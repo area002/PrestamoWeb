@@ -21,8 +21,8 @@ class Tzona {
 
     static constraints = {
 
-        nombre()
-        visible(nullable: true)
+        nombre(blank: false)
+        visible()
     }
 
 }

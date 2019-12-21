@@ -42,6 +42,9 @@ class UrlMappings {
             action=[POST:"salvar"]
         }
 
+        "/Reg_zonas/salvar"(controller: "zona"){
+            action=[POST:"salvar"]
+        }
 
 
 

@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat
 
 @Transactional
 class PrestamosService {
+    SqlService sqlService;
 
     def serviceMethod() { }
 
@@ -37,26 +38,19 @@ class PrestamosService {
             BigDecimal monto_cuota= interes+capital;
 
             for (int f=0; f<cant_pagos; i++){
+                Long dias=30;
+                String fechaprestamos=sqlService.Get_Sumar_Dias(fechas,dias)
                 Map tupla= new HashMap();
                 tupla.put("ncuota", f+1);
-                tupla.put("fpago", simpleDateFormat.format(fechas));
+                tupla.put("fpago", simpleDateFormat.format(fechaprestamos));
+                tupla.put("montocuota", simpleDateFormat.format(monto_cuota));
+                tupla.put("interes", simpleDateFormat.format(intereses));
+                tupla.put("capital", simpleDateFormat.format(capital));
+                lscuotas.add(tupla)
+
 
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return lscuotas;
+         return lscuotas;
     }
 }

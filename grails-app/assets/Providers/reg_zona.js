@@ -1,6 +1,6 @@
 var idclientemod = 0;
 
-$("#reg_cob").submit(function (e) {
+$("#reg_zon").submit(function (e) {
     e.preventDefault();
     var params = {};
 
@@ -19,7 +19,7 @@ $("#reg_cob").submit(function (e) {
 function validar(params) {
 
     if (params.idnombre == ""){
-        show_no("Alerta","El nombre del cobrador no puede estar vacio");
+        show_no("Alerta","El nombre de la zona no puede estar vacio");
         return false;
     }
     return true
@@ -37,7 +37,7 @@ function salvar(params) {
                 show_yes("Relizado",json.msj);
                 idclientemod = 0;
                 // ActualizarTabla();
-                $("#reg_cob").trigger('reset');
+                $("#reg_zon").trigger('reset');
                 location.reload();
             }
             else{
